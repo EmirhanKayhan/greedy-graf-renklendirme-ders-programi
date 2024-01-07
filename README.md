@@ -1,4 +1,7 @@
 # README
+
+Ders Programı Oluşturma Projesi 
+
 Bu proje, ders programı oluşturmak için MySQL veritabanını kullanmakta ve Networkx kütüphanesi ile graf oluşturarak greedy coloring algoritması ile derslere gün ve saat bilgisi atamaktadır.
 
 Proje Açıklaması
@@ -30,27 +33,28 @@ Oluşturulan grafik, renklendirmeye dayalı olarak matplotlib kullanılarak çiz
 Veritabanı Bağlantısı Kapatma:
 
 İşlemler tamamlandıktan sonra MySQL veritabanı bağlantısı kapatılmıştır.
+
 Proje Çalıştırma Adımları
-Projenin bulunduğu dizine gidin.
 
-Python yüklü değilse Python'un resmi web sitesinden indirip yükleyin.
+1. Projenin bulunduğu dizine gidin.
 
-Gerekli kütüphaneleri yüklemek için terminal veya komut istemcisine şu komutu yazın:
+2. Python yüklü değilse Python'un resmi web sitesinden indirip yükleyin.
 
-bash
-Copy code
+3. Gerekli kütüphaneleri yüklemek için terminal veya komut istemcisine şu komutu yazın:
+   
 pip install mysql-connector-python networkx matplotlib
-Proje dosyasını bir metin düzenleyici ile açın ve MySQL bağlantı bilgilerinizi güncelleyin (host, port, user, password, database).
 
-Terminal veya komut istemcisinde projenin bulunduğu dizine gidin ve şu komutu çalıştırın:
+4. Proje dosyasını bir metin düzenleyici ile açın ve MySQL bağlantı bilgilerinizi güncelleyin (host, port, user, password, database).
+   
+5. Terminal veya komut istemcisinde projenin bulunduğu dizine gidin ve şu komutu çalıştırın:
 
-bash
-Copy code
-python proje_adi.py
+   python proje_adi.py
 (Not: proje_adi.py dosyanızın gerçek adını kullanın.)
 
-Proje başarıyla çalıştırıldığında, konsol çıktısında ders adları, renkleri ve atanan gün/saat/derslik bilgilerini görebilirsiniz.
+6. Proje başarıyla çalıştırıldığında, konsol çıktısında ders adları, renkleri ve atanan gün/saat/derslik bilgilerini görebilirsiniz.
 
-Ayrıca, matplotlib tarafından çizilen ders programı grafiğini görmek için bir pencere açılacaktır.
+7. Ayrıca, matplotlib tarafından çizilen ders programı grafiğini görmek için bir pencere açılacaktır.
 
 Bu adımları takip ederek proje başarıyla çalıştırılabilir ve ders programı oluşturulabilir.
+
+
