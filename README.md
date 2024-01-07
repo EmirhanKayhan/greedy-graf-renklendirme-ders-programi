@@ -40,7 +40,7 @@ Proje Çalıştırma Adımları
 
 2. Python yüklü değilse Python'un resmi web sitesinden indirip yükleyin.
 
-3. Veri tabanını oluşturmak için MySQL'de  bu kodları çalıştırın.
+3. Veri tabanını oluşturmak için MySQL'de  bu kodları çalıştırın kodları çalıştırdıktan sonra gerekli ders verilerini girin.
 
 
    CREATE DATABASE dersprogrami;
