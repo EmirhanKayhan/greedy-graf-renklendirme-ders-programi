@@ -42,7 +42,7 @@ Proje Çalıştırma Adımları
 
 3. Gerekli kütüphaneleri yüklemek için terminal veya komut istemcisine şu komutu yazın:
    
-pip install mysql-connector-python networkx matplotlib
+   pip install mysql-connector-python networkx matplotlib
 
 4. Proje dosyasını bir metin düzenleyici ile açın ve MySQL bağlantı bilgilerinizi güncelleyin (host, port, user, password, database).
    
