@@ -40,20 +40,69 @@ Proje Çalıştırma Adımları
 
 2. Python yüklü değilse Python'un resmi web sitesinden indirip yükleyin.
 
-3. Gerekli kütüphaneleri yüklemek için terminal veya komut istemcisine şu komutu yazın:
+3. Veri tabanını oluşturmak için MySQL'de  bu kodları çalıştırın.
+
+
+   CREATE DATABASE dersprogrami;
+   USE dersprogrami;
+   
+   CREATE TABLE dersler (
+     ders_id int NOT NULL,
+     ders_adi varchar(255) DEFAULT NULL,
+     ders_gunsaat varchar(45) DEFAULT NULL,
+     derslik_no varchar(45) DEFAULT NULL,
+     ders_kacincisinif varchar(45) DEFAULT NULL,
+     PRIMARY KEY (ders_id)
+   );
+   
+   CREATE TABLE hocalar (
+     hoca_id int NOT NULL,
+     hoca_adi varchar(255) NOT NULL,
+     PRIMARY KEY (hoca_id)
+   );
+   
+   
+   CREATE TABLE siniflar (
+     sinif_id int NOT NULL,
+     sinif_adi varchar(45) DEFAULT NULL,
+     PRIMARY KEY (sinif_id),
+     KEY idx_sinif_adi (sinif_adi)
+   );
+   
+   CREATE TABLE ders_hoca (
+     ders_id int NOT NULL,
+     hoca_id int NOT NULL,
+     PRIMARY KEY (ders_id,hoca_id),
+     KEY hoca_id (hoca_id),
+     CONSTRAINT ders_hoca_ibfk_1 FOREIGN KEY (ders_id) REFERENCES dersler (ders_id),
+     CONSTRAINT ders_hoca_ibfk_2 FOREIGN KEY (hoca_id) REFERENCES hocalar (hoca_id)
+   );
+   
+   CREATE TABLE ders_sinif (
+     ders_id int NOT NULL,
+     sinif_id int NOT NULL,
+     PRIMARY KEY (ders_id,sinif_id),
+     KEY sinif_id (sinif_id),
+     CONSTRAINT ders_sinif_ibfk_1 FOREIGN KEY (ders_id) REFERENCES dersler (ders_id),
+     CONSTRAINT ders_sinif_ibfk_2 FOREIGN KEY (sinif_id) REFERENCES siniflar (sinif_id)
+   );
+
+
+
+4. Gerekli kütüphaneleri yüklemek için terminal veya komut istemcisine şu komutu yazın:
    
    pip install mysql-connector-python networkx matplotlib
 
-4. Proje dosyasını bir metin düzenleyici ile açın ve MySQL bağlantı bilgilerinizi güncelleyin (host, port, user, password, database).
+5. Proje dosyasını bir metin düzenleyici ile açın ve MySQL bağlantı bilgilerinizi güncelleyin (host, port, user, password, database).
    
-5. Terminal veya komut istemcisinde projenin bulunduğu dizine gidin ve şu komutu çalıştırın:
+6. Terminal veya komut istemcisinde projenin bulunduğu dizine gidin ve şu komutu çalıştırın:
 
    python proje_adi.py
 (Not: proje_adi.py dosyanızın gerçek adını kullanın.)
 
-6. Proje başarıyla çalıştırıldığında, konsol çıktısında ders adları, renkleri ve atanan gün/saat/derslik bilgilerini görebilirsiniz.
+7. Proje başarıyla çalıştırıldığında, konsol çıktısında ders adları, renkleri ve atanan gün/saat/derslik bilgilerini görebilirsiniz.
 
-7. Ayrıca, matplotlib tarafından çizilen ders programı grafiğini görmek için bir pencere açılacaktır.
+8. Ayrıca, matplotlib tarafından çizilen ders programı grafiğini görmek için bir pencere açılacaktır.
 
 Bu adımları takip ederek proje başarıyla çalıştırılabilir ve ders programı oluşturulabilir.
 
